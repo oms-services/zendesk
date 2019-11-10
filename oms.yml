@@ -1,7 +1,7 @@
-omg: 1
+oms: 1
 lifecycle:
   startup:
-    command: ["zendesk"]
+    command: ['zendesk']
 info:
   version: 1.0.0
   title: Zendesk
@@ -58,7 +58,9 @@ actions:
       restrictedAgent:
         type: boolean
         in: requestBody
-        help: If the agent has any restrictions; false for admins and unrestricted agents, true for other agents
+        help:
+          If the agent has any restrictions; false for admins and unrestricted
+          agents, true for other agents
       signature:
         type: string
         in: requestBody
@@ -66,11 +68,15 @@ actions:
       suspended:
         type: boolean
         in: requestBody
-        help: If the agent is suspended. Tickets from suspended users are also suspended, and these users cannot sign in to the end user portal
+        help:
+          If the agent is suspended. Tickets from suspended users are also
+          suspended, and these users cannot sign in to the end user portal
       ticketRestriction:
         type: string
         in: requestBody
-        help: Specifies which tickets the user has access to. Possible values are- "organization", "groups", "assigned", "requested", null
+        help:
+          Specifies which tickets the user has access to. Possible values
+          are- "organization", "groups", "assigned", "requested", null
       userFields:
         type: map
         in: requestBody
@@ -93,11 +99,14 @@ actions:
       externalId:
         type: string
         in: requestBody
-        help: An id you can use to link Zendesk Support tickets to local records.
+        help:
+          An id you can use to link Zendesk Support tickets to local records.
       type:
         type: string
         in: requestBody
-        help: The type of this ticket. Possible values- "problem", "incident", "question" or "task".
+        help:
+          The type of this ticket. Possible values- "problem", "incident",
+          "question" or "task".
       subject:
         type: string
         in: requestBody
@@ -105,7 +114,8 @@ actions:
       rawSubject:
         type: string
         in: requestBody
-        help: The dynamic content placeholder, if present, or the "subject" value
+        help:
+          The dynamic content placeholder, if present, or the "subject" value
       description:
         type: string
         in: requestBody
@@ -113,11 +123,15 @@ actions:
       priority:
         type: string
         in: requestBody
-        help: The urgency with which the ticket should be addressed. Possible values- "urgent", "high", "normal", "low"
+        help:
+          The urgency with which the ticket should be addressed. Possible
+          values- "urgent", "high", "normal", "low"
       status:
         type: string
         in: requestBody
-        help: The state of the ticket. Possible values- "new", "open", "pending", "hold", "solved", "closed".
+        help:
+          The state of the ticket. Possible values- "new", "open", "pending",
+          "hold", "solved", "closed".
       recipient:
         type: string
         in: requestBody
@@ -130,11 +144,15 @@ actions:
       submitterId:
         type: int
         in: requestBody
-        help: The user who submitted the ticket. The submitter always becomes the author of the first comment on the ticket.
+        help:
+          The user who submitted the ticket. The submitter always becomes the
+          author of the first comment on the ticket.
       organizationId:
         type: int
         in: requestBody
-        help: The organization of the requester. You can only specify the ID of an organization associated with the requester.
+        help:
+          The organization of the requester. You can only specify the ID of an
+          organization associated with the requester.
       groupId:
         type: int
         in: requestBody
@@ -146,19 +164,25 @@ actions:
       problemId:
         type: int
         in: requestBody
-        help: For tickets of type "incident", the ID of the problem the incident is linked to.
+        help:
+          For tickets of type "incident", the ID of the problem the incident is
+          linked to.
       dueAt:
         type: string
         in: requestBody
-        help: If this is a ticket of type "task" it has a due date. Due date format uses "2019-11-02T15:04:05" ISO 8601 format.
+        help:
+          If this is a ticket of type "task" it has a due date. Due date format
+          uses "2019-11-02T15:04:05" ISO 8601 format.
       brandId:
         type: int
         in: requestBody
-        help: Enterprise only. The id of the brand this ticket is associated with.
+        help:
+          Enterprise only. The id of the brand this ticket is associated with.
       ticketFormId:
         type: int
         in: requestBody
-        help: Enterprise only. The id of the ticket form to render for the ticket.
+        help:
+          Enterprise only. The id of the ticket form to render for the ticket.
       followupSourceId:
         type: int
         in: requestBody
@@ -177,7 +201,9 @@ actions:
       sortBy:
         type: string
         in: requestBody
-        help: Possible values are assignee, assignee.name, created_at, group, id, locale, requester, requester.name, status, subject, updated_at.
+        help:
+          Possible values are assignee, assignee.name, created_at, group, id,
+          locale, requester, requester.name, status, subject, updated_at.
       sortOrder:
         type: string
         in: requestBody
@@ -199,18 +225,18 @@ actions:
         required: true
         help: The user's primary email address.
     output:
-      type: map
+      type: object
       contentType: application/json
       properties:
         success:
           type: boolean
-          help: Return true if ticket found and deleted successfully. 
+          help: Return true if ticket found and deleted successfully.
         message:
           type: string
-          help: Return successfully deleted message. 
+          help: Return successfully deleted message.
         statusCode:
           type: int
-          help: Return http status code. 
+          help: Return http status code.
 environment:
   DOMAIN_NAME:
     type: string
