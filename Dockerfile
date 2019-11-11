@@ -12,6 +12,6 @@ ADD . /go/src/github.com/oms-services/zendesk
 
 RUN go install github.com/oms-services/zendesk
 
-ENTRYPOINT zendesk
+ENTRYPOINT service
 
 EXPOSE 3000

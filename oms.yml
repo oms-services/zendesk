@@ -1,7 +1,7 @@
 oms: 1
 lifecycle:
   startup:
-    command: ['zendesk']
+    command: ['service']
 info:
   version: 1.0.0
   title: Zendesk
