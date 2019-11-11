@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	zendesk "github.com/MEDIGO/go-zendesk/zendesk"
 	"github.com/aws/aws-sdk-go/aws"
-	result "github.com/heaptracetechnology/zendesk/result"
+	result "github.com/oms-services/zendesk/result"
 	"net/http"
 	"os"
 	"time"

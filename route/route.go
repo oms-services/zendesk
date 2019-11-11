@@ -2,7 +2,7 @@ package route
 
 import (
     "github.com/gorilla/mux"
-    service "github.com/heaptracetechnology/zendesk/service"
+    service "github.com/oms-services/zendesk/service"
     "log"
     "net/http"
 )

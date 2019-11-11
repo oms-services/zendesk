@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/heaptracetechnology/zendesk/route"
+	"github.com/oms-services/zendesk/route"
 	"log"
 	"net/http"
 )

@@ -1,8 +1,8 @@
 # _Zendesk_ OMG Microservice
 
 [![Open Microservice Guide](https://img.shields.io/badge/OMG%20Enabled-👍-green.svg?)](https://microservice.guide)
-[![Build Status](https://travis-ci.com/heaptracetechnology/zendesk.svg?branch=master)](https://travis-ci.com/heaptracetechnology/zendesk)
-[![codecov](https://codecov.io/gh/heaptracetechnology/zendesk/branch/master/graph/badge.svg)](https://codecov.io/gh/heaptracetechnology/zendesk)
+[![Build Status](https://travis-ci.com/oms-services/zendesk.svg?branch=master)](https://travis-ci.com/oms-services/zendesk)
+[![codecov](https://codecov.io/gh/oms-services/zendesk/branch/master/graph/badge.svg)](https://codecov.io/gh/oms-services/zendesk)
 
 An OMG service for zendesk, it offers one of the most efficient and user-friendly Help Desk features available. It allows companies to design their own online Help Center format to ensure that it matches their unique brand message and customers' needs.
 
