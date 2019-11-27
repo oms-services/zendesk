@@ -1,18 +1,19 @@
 oms: 1
-lifecycle:
-  startup:
-    command: ['service']
 info:
   version: 1.0.0
   title: Zendesk
   description: This is a zendesk service
   contact:
-    name: Rohit Shetty
-    url: https://github.com/ht68rohit
-    email: rohits@heaptrace.com
+    name: Open Microservices
+    url: 'https://openmicroservices.org'
+    email: core@openmicroservices.org
   license:
     name: MIT
-    url: https://opensource.org/licenses/MIT
+    url: 'https://opensource.org/licenses/MIT'
+lifecycle:
+  startup:
+    command:
+      - service
 actions:
   createUser:
     help: Create user in zendesk.
@@ -38,7 +39,7 @@ actions:
       details:
         type: string
         in: requestBody
-        help: Any details you want to store about the user, such as an address
+        help: 'Any details you want to store about the user, such as an address'
       moderator:
         type: boolean
         in: requestBody
@@ -50,7 +51,7 @@ actions:
       onlyPrivateComments:
         type: boolean
         in: requestBody
-        help: true if the user can only create private comments
+        help: "true\_if the user can only create private comments"
       phone:
         type: string
         in: requestBody
@@ -58,7 +59,7 @@ actions:
       restrictedAgent:
         type: boolean
         in: requestBody
-        help:
+        help: >-
           If the agent has any restrictions; false for admins and unrestricted
           agents, true for other agents
       signature:
@@ -68,15 +69,13 @@ actions:
       suspended:
         type: boolean
         in: requestBody
-        help:
+        help: >-
           If the agent is suspended. Tickets from suspended users are also
           suspended, and these users cannot sign in to the end user portal
       ticketRestriction:
         type: string
         in: requestBody
-        help:
-          Specifies which tickets the user has access to. Possible values
-          are- "organization", "groups", "assigned", "requested", null
+        help: "Specifies which tickets the user has access to. Possible values are-\_\"organization\",\_\"groups\",\_\"assigned\",\_\"requested\",\_null"
       userFields:
         type: map
         in: requestBody
@@ -99,12 +98,11 @@ actions:
       externalId:
         type: string
         in: requestBody
-        help:
-          An id you can use to link Zendesk Support tickets to local records.
+        help: An id you can use to link Zendesk Support tickets to local records.
       type:
         type: string
         in: requestBody
-        help:
+        help: >-
           The type of this ticket. Possible values- "problem", "incident",
           "question" or "task".
       subject:
@@ -114,8 +112,7 @@ actions:
       rawSubject:
         type: string
         in: requestBody
-        help:
-          The dynamic content placeholder, if present, or the "subject" value
+        help: 'The dynamic content placeholder, if present, or the "subject" value'
       description:
         type: string
         in: requestBody
@@ -123,13 +120,13 @@ actions:
       priority:
         type: string
         in: requestBody
-        help:
+        help: >-
           The urgency with which the ticket should be addressed. Possible
           values- "urgent", "high", "normal", "low"
       status:
         type: string
         in: requestBody
-        help:
+        help: >-
           The state of the ticket. Possible values- "new", "open", "pending",
           "hold", "solved", "closed".
       recipient:
@@ -144,13 +141,13 @@ actions:
       submitterId:
         type: int
         in: requestBody
-        help:
+        help: >-
           The user who submitted the ticket. The submitter always becomes the
           author of the first comment on the ticket.
       organizationId:
         type: int
         in: requestBody
-        help:
+        help: >-
           The organization of the requester. You can only specify the ID of an
           organization associated with the requester.
       groupId:
@@ -160,29 +157,25 @@ actions:
       forumTopicId:
         type: int
         in: requestBody
-        help: The topic this ticket originated from, if any.
+        help: 'The topic this ticket originated from, if any.'
       problemId:
         type: int
         in: requestBody
-        help:
+        help: >-
           For tickets of type "incident", the ID of the problem the incident is
           linked to.
       dueAt:
         type: string
         in: requestBody
-        help:
-          If this is a ticket of type "task" it has a due date. Due date format
-          uses "2019-11-02T15:04:05" ISO 8601 format.
+        help: "If this is a ticket of type \"task\" it has a due date. Due date format uses \"2019-11-02T15:04:05\"\_ISO 8601\_format."
       brandId:
         type: int
         in: requestBody
-        help:
-          Enterprise only. The id of the brand this ticket is associated with.
+        help: Enterprise only. The id of the brand this ticket is associated with.
       ticketFormId:
         type: int
         in: requestBody
-        help:
-          Enterprise only. The id of the ticket form to render for the ticket.
+        help: Enterprise only. The id of the ticket form to render for the ticket.
       followupSourceId:
         type: int
         in: requestBody
@@ -201,13 +194,13 @@ actions:
       sortBy:
         type: string
         in: requestBody
-        help:
+        help: >-
           Possible values are assignee, assignee.name, created_at, group, id,
           locale, requester, requester.name, status, subject, updated_at.
       sortOrder:
         type: string
         in: requestBody
-        help: One of asc, desc. Defaults to asc.
+        help: 'One of asc, desc. Defaults to asc.'
     output:
       type: map
       contentType: application/json
